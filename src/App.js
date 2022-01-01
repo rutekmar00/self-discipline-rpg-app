@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SignUpForm from "./components/SignUpForm";
+import CharacterChoice from "./components/CharacterChoice/CharacterChoice";
 
 function App() {
   return (
     <div className="App">
-      <SignUpForm />
+      <CharacterChoice />
     </div>
   );
 }
