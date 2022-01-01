@@ -3,12 +3,16 @@ import { Col, Container, Row } from "reactstrap";
 import "./MainPage.css";
 import NavBar from "./NavBar";
 import Progress from "reactstrap/es/Progress";
+import HeroWarrior from "../Hero/HeroWarrior";
+import HeroElf from "../Hero/HeroElf";
+import HeroKnight from "../Hero/HeroKnight";
 
 class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       characterClass: "Warrior",
+      heroState: "default",
       level: "1",
       playerName: "Test",
       experience: "0",
@@ -26,13 +30,31 @@ class MainPage extends Component {
     };
   }
 
+  componentDidMount() {
+    this.handleHero("default");
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.handleHeroTimer);
+  }
+
+  handleHero = (heroState) => {
+    this.setState({ heroState: heroState });
+    this.handleHeroTimer = setTimeout(
+      function () {
+        this.setState({ heroState: "heroIdleBlinking" });
+      }.bind(this),
+      0
+    );
+  };
+
   render() {
     return (
       <Container fluid>
         <Row>
           <Col md="6" className="height-XL">
             <Col className="">
-              <NavBar />
+              <NavBar handleHero={this.handleHero} character={this.state} />
             </Col>
             <Col className="height-XXS mb-3 text-center">
               <span className="nickname">{this.state.playerName} </span>
@@ -43,6 +65,20 @@ class MainPage extends Component {
                   <span className="class-name">
                     {this.state.characterClass} <br /> lvl. {this.state.level}
                   </span>
+                </Col>
+                <Col xs="6" className="height-M">
+                  {this.state.characterClass === "Warrior" ? (
+                    <HeroWarrior heroState={this.state.heroState} />
+                  ) : null}
+                  {this.state.characterClass === "Rogue" ? (
+                    <HeroKnight heroState={this.state.heroState} />
+                  ) : null}
+                  {this.state.characterClass === "Mage" ? (
+                    <HeroElf heroState={this.state.heroState} />
+                  ) : null}
+                  {this.state.characterClass === "Archer" ? (
+                    <HeroWarrior heroState={this.state.heroState} />
+                  ) : null}
                 </Col>
               </Row>
             </Col>

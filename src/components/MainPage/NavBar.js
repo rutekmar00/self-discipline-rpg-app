@@ -21,6 +21,7 @@ class NavBar extends Component {
               className="m-3 pointer-hover"
               onClick={() => {
                 console.log("Missions");
+                this.props.handleHero("heroIdleBlinking");
               }}
             />
           </NavItem>
@@ -31,6 +32,7 @@ class NavBar extends Component {
               className="m-3 pointer-hover"
               onClick={() => {
                 console.log("MissionsGlossary");
+                this.props.handleHero("heroIdleBlinking");
               }}
             />
           </NavItem>
@@ -41,6 +43,7 @@ class NavBar extends Component {
               className="m-3 pointer-hover"
               onClick={() => {
                 console.log("Trophies");
+                this.props.handleHero("heroIdleBlinking");
               }}
             />
           </NavItem>
@@ -51,6 +54,7 @@ class NavBar extends Component {
               className="m-3 pointer-hover"
               onClick={() => {
                 console.log("Statistics");
+                this.props.handleHero("heroIdleBlinking");
               }}
             />
           </NavItem>
@@ -61,6 +65,7 @@ class NavBar extends Component {
               className="m-3 pointer-hover"
               onClick={() => {
                 console.log("Logout");
+                this.props.handleHero("heroDied");
               }}
             />
           </NavItem>
