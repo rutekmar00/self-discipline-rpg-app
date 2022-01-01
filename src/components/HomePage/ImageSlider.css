@@ -1,0 +1,8 @@
+.carousel-item-tag {
+  max-width: 100%;
+  height: 60vh;
+}
+
+img {
+  object-fit: contain;
+}
