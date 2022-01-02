@@ -7,6 +7,7 @@ import HeroWarrior from "../Hero/HeroWarrior";
 import HeroElf from "../Hero/HeroElf";
 import HeroKnight from "../Hero/HeroKnight";
 import Missions from "../Missions/Missions";
+import MissionsGlossary from "../MissionsGlossary/MissionsGlossary";
 
 class MainPage extends Component {
   constructor(props) {
@@ -156,7 +157,7 @@ class MainPage extends Component {
             </Col>
           </Col>
           <Col md="6" className="height-XL mt-4">
-            <Missions />
+            <MissionsGlossary />
           </Col>
         </Row>
       </Container>
