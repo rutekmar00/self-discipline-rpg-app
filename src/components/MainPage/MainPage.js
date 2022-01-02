@@ -6,6 +6,7 @@ import Progress from "reactstrap/es/Progress";
 import HeroWarrior from "../Hero/HeroWarrior";
 import HeroElf from "../Hero/HeroElf";
 import HeroKnight from "../Hero/HeroKnight";
+import Missions from "../Missions/Missions";
 
 class MainPage extends Component {
   constructor(props) {
@@ -153,6 +154,9 @@ class MainPage extends Component {
                 </Col>
               </Row>
             </Col>
+          </Col>
+          <Col md="6" className="height-XL mt-4">
+            <Missions />
           </Col>
         </Row>
       </Container>
