@@ -9,6 +9,7 @@ import HeroKnight from "../Hero/HeroKnight";
 import Missions from "../Missions/Missions";
 import MissionsGlossary from "../MissionsGlossary/MissionsGlossary";
 import Statistics from "../Statistics/Statistics";
+import Trophies from "../Trophies/Trophies";
 
 class MainPage extends Component {
   constructor(props) {
@@ -158,7 +159,7 @@ class MainPage extends Component {
             </Col>
           </Col>
           <Col md="6" className="height-XL mt-4">
-            <Statistics />
+            <Trophies />
           </Col>
         </Row>
       </Container>

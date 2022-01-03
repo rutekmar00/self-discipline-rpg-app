@@ -8,7 +8,7 @@ class Statistics extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userTrophiess: [
+      userTrophies: [
         { id: 1641148657028, name: "Native language is lava!", trophyId: 8 },
         { id: 1641145057028, name: "Stop smoke!", trophyId: 1 },
       ],
