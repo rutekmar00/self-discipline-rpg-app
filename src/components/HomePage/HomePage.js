@@ -4,11 +4,6 @@ import ImageSlider from "./ImageSlider";
 import "./HomePage.css";
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <Container fluid={true} className="color-bckg">
@@ -44,7 +39,7 @@ class HomePage extends React.Component {
           >
             <div className="d-flex align-items-center flex-column">
               <Button
-                onClick={() => console.log("login")}
+                onClick={() => this.props.changeForm("login")}
                 outline
                 color="dark"
                 size="lg"
@@ -58,7 +53,7 @@ class HomePage extends React.Component {
               </div>
               <div className="d-block pt-3">
                 <Button
-                  onClick={() => console.log("signup")}
+                  onClick={() => this.props.changeForm("signup")}
                   outline
                   color="dark"
                   size="lg"

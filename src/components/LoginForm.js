@@ -40,9 +40,11 @@ class LoginForm extends React.Component {
             validationSchema={signInSchema}
             onSubmit={async (values, { setSubmitting, resetForm }) => {
               if (!this.state.submitted) {
-                console.log("Log In successful");
-                console.log(values);
-                resetForm();
+                this.props.handleLogin(
+                  values,
+                  resetForm,
+                  this.resetSubmittedState
+                );
                 this.setState({ submitted: true });
               }
             }}
@@ -99,6 +101,11 @@ class LoginForm extends React.Component {
                     </div>
                   )}
                 </div>
+                {this.props.badCredentials && (
+                  <div>
+                    <h1>Credentials are bad! Try again</h1>
+                  </div>
+                )}
                 <div className="form-group">
                   <button
                     disabled={!(isValid && dirty)}
@@ -108,7 +115,7 @@ class LoginForm extends React.Component {
                     Login
                   </button>
                   <button
-                    onClick={() => console.log("home")}
+                    onClick={() => this.props.changeForm("home")}
                     className="btn btn-secondary ml-1"
                   >
                     Cancel
@@ -116,7 +123,7 @@ class LoginForm extends React.Component {
                 </div>
                 <div className="form-group">
                   <button
-                    onClick={() => console.log("signup")}
+                    onClick={() => this.props.changeForm("signup")}
                     className="btn btn-link"
                   >
                     Register
