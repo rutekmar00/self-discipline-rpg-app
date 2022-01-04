@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
+import { getUsersTrophies } from "../../services/firebase";
 
 class CharacterStats extends Component {
   constructor(props) {
@@ -12,25 +13,31 @@ class CharacterStats extends Component {
     };
   }
 
-  componentDidMount() {
-    const trophiesValue = this.props.trophies.length
-      ? this.props.trophies.reduce(function (previousValue, currentValue) {
-          return previousValue + currentValue.cost;
-        }, 0)
-      : 0;
-    const summaryPoints = Object.values(this.props.statistics).reduce(function (
-      previousValue,
-      currentValue
-    ) {
-      return previousValue + currentValue;
-    },
-    0);
-    this.setState({
-      itemCount: this.props.trophies.length,
-      trophiesValue: trophiesValue,
-      summaryPoints: summaryPoints,
-      aliveSince: new Date(this.props.userCreated).toLocaleDateString("en-GB"),
-    });
+  async componentDidMount() {
+    try {
+      const trophies = await getUsersTrophies(this.props.trophies);
+      const trophiesValue = trophies.length
+        ? trophies.reduce(function (previousValue, currentValue) {
+            return previousValue + currentValue.cost;
+          }, 0)
+        : 0;
+      const summaryPoints = Object.values(this.props.statistics).reduce(
+        function (previousValue, currentValue) {
+          return previousValue + currentValue;
+        },
+        0
+      );
+      this.setState({
+        itemCount: trophies.length,
+        trophiesValue: trophiesValue,
+        summaryPoints: summaryPoints,
+        aliveSince: new Date(this.props.userCreated).toLocaleDateString(
+          "en-GB"
+        ),
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {

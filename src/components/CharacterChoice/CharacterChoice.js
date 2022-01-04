@@ -15,7 +15,7 @@ class CharacterChoice extends React.Component {
   handleSubmit = (e) => {
     let tmp = this.setCharacterStatsRef.current.getStats();
     tmp["characterClass"] = this.characterClassRef.current.state.characterClass;
-    console.log(tmp);
+    this.props.handleCharacterChoice(e, tmp);
   };
 
   render() {

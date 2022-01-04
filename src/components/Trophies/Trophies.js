@@ -2,16 +2,6 @@ import React, { Component } from "react";
 import { Col, Row } from "reactstrap";
 
 class Trophies extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userTrophies: [
-        { id: 1641148657028, name: "Native language is lava!", trophyId: 8 },
-        { id: 1641145057028, name: "Stop smoke!", trophyId: 1 },
-      ],
-    };
-  }
-
   render() {
     return (
       <div>
@@ -21,8 +11,8 @@ class Trophies extends Component {
           </h3>
         </div>
         <Row className="overflow-auto">
-          {this.state.userTrophies.length ? (
-            this.state.userTrophies.map((item) => (
+          {this.props.userTrophies.length ? (
+            this.props.userTrophies.map((item) => (
               <Col xs="5" className="p-1 img-container" key={item.id}>
                 <div className="border-dark item-con">
                   <img

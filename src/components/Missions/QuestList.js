@@ -2,11 +2,6 @@ import React from "react";
 import Quest from "./Quest";
 
 class QuestList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   checkDate = (item) => {
     let currDate = null;
     let questDate = new Date(item.questDate).toDateString();
@@ -38,6 +33,7 @@ class QuestList extends React.Component {
                 questShortDescription={item.questShortDescription}
                 questDone={item.questDone}
                 questStatus={item.questStatus}
+                handleFinish={this.props.handleFinish}
               />
             ))
           ) : (

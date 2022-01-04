@@ -15,18 +15,6 @@ class SetCharacterStats extends React.Component {
     };
   }
 
-  getStats = () => {
-    const temp = {
-      strength: this.state.strength,
-      vitality: this.state.vitality,
-      agility: this.state.agility,
-      intelligence: this.state.intelligence,
-      charisma: this.state.charisma,
-      responsibility: this.state.responsibility,
-    };
-    return temp;
-  };
-
   changeStat = (e, name, action) => {
     e.preventDefault();
     this.setState((prevState) => {

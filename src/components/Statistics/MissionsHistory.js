@@ -14,15 +14,6 @@ class MissionsHistory extends Component {
     let newDate = new Date(date);
     this.setState({ date: date });
     this.setState({ realDate: newDate.toDateString() });
-    let currDay = date.getDate();
-    let currMonth = date.getMonth() + 1;
-    let currYear = date.getFullYear();
-    this.setState({
-      dateStr:
-        currYear.toString() +
-        this.dateFormat(currMonth).toString() +
-        this.dateFormat(currDay).toString(),
-    });
   };
 
   dateFormat = (num) => {

@@ -11,7 +11,7 @@ class MissionsStats extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     let missionsStatusResult = this.props.userQuests.reduce(
       (previousValue, currentValue) => {
         if (currentValue.questStatus === "Failed") {

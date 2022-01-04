@@ -26,7 +26,7 @@ const items = [
   },
 ];
 
-const ImageSlider = (props) => {
+const ImageSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

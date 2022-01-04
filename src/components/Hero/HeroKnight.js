@@ -16,17 +16,21 @@ const heroIdleBlinking = [
   <img key={10} alt="Hero" src="/heroKnight/images/Knight_03__IDLE_009.png" />,
 ];
 
-const heroDied = [
-  <img key={1} alt="Hero" src="/heroKnight/images/Knight_03__DIE_000.png" />,
-  <img key={2} alt="Hero" src="/heroKnight/images/Knight_03__DIE_001.png" />,
-  <img key={3} alt="Hero" src="/heroKnight/images/Knight_03__DIE_002.png" />,
-  <img key={4} alt="Hero" src="/heroKnight/images/Knight_03__DIE_003.png" />,
-  <img key={5} alt="Hero" src="/heroKnight/images/Knight_03__DIE_004.png" />,
-  <img key={6} alt="Hero" src="/heroKnight/images/Knight_03__DIE_005.png" />,
-  <img key={7} alt="Hero" src="/heroKnight/images/Knight_03__DIE_006.png" />,
-  <img key={8} alt="Hero" src="/heroKnight/images/Knight_03__DIE_007.png" />,
-  <img key={9} alt="Hero" src="/heroKnight/images/Knight_03__DIE_008.png" />,
-  <img key={10} alt="Hero" src="/heroKnight/images/Knight_03__DIE_009.png" />,
+const heroLogOut = [
+  <img key={1} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_000.png" />,
+  <img key={2} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_001.png" />,
+  <img key={3} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_002.png" />,
+  <img key={4} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_003.png" />,
+  <img key={5} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_004.png" />,
+  <img key={6} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_005.png" />,
+  <img key={7} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_006.png" />,
+  <img key={8} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_007.png" />,
+  <img key={9} alt="Hero" src="/heroKnight/images/Knight_03__LOGOUT_008.png" />,
+  <img
+    key={10}
+    alt="Hero"
+    src="/heroKnight/images/Knight_03__LOGOUT_009.png"
+  />,
 ];
 
 const defaultStates = ["default", "heroIdleBlinking"];
@@ -82,9 +86,9 @@ class HeroKnight extends React.Component {
                 />
               </div>
             ),
-            heroDied: (
+            heroLogOut: (
               <SequenceAnimator
-                children={heroDied}
+                children={heroLogOut}
                 duration={1000}
                 autoplay={true}
               />
@@ -96,7 +100,7 @@ class HeroKnight extends React.Component {
         }
         <div className="hidden">
           {heroIdleBlinking}
-          {heroDied}
+          {heroLogOut}
         </div>
       </div>
     );

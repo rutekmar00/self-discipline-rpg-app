@@ -64,7 +64,7 @@ class DateSlider extends Component {
     let currMonth = currDate.getMonth() + 1;
     let currWeekDayIndex = currDate.getDay();
     let currYear = currDate.getFullYear();
-    let currWeekDay = this.weekDays[currWeekDayIndex];
+    let currWeekDay = this.state.weekDays[currWeekDayIndex];
     this.setState({
       day: this.dateFormat(currDay),
       month: this.dateFormat(currMonth),

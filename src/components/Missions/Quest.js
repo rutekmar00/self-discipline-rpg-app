@@ -60,11 +60,19 @@ class Quest extends React.Component {
                     <button
                       className="btn "
                       onClick={() => {
-                        console.log("End quest");
+                        this.props.handleFinish(
+                          this.props.id,
+                          this.props.groupId,
+                          this.props.questId
+                        );
                       }}
                       disabled={
                         this.props.questStatus === "Failed" ||
-                        this.props.questStatus === "Future"
+                        this.props.questStatus === "Finished" ||
+                        new Date().toISOString().split("T")[0] <
+                          new Date(this.props.questDate)
+                            .toISOString()
+                            .split("T")[0]
                       }
                     >
                       Finish <span className="sr-only"></span>

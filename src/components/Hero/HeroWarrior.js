@@ -156,156 +156,156 @@ const heroIdleBlinking = [
   />,
 ];
 
-const heroDied = [
+const heroLogOut = [
   <img
     key={1}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_000.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_000.png"
   />,
   <img
     key={2}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_001.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_001.png"
   />,
   <img
     key={3}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_002.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_002.png"
   />,
   <img
     key={4}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_003.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_003.png"
   />,
   <img
     key={5}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_004.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_004.png"
   />,
   <img
     key={6}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_005.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_005.png"
   />,
   <img
     key={7}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_006.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_006.png"
   />,
   <img
     key={8}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_007.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_007.png"
   />,
   <img
     key={9}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_008.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_008.png"
   />,
   <img
     key={10}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_009.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_009.png"
   />,
   <img
     key={11}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_010.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_010.png"
   />,
   <img
     key={12}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_011.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_011.png"
   />,
   <img
     key={13}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_012.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_012.png"
   />,
   <img
     key={14}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_013.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_013.png"
   />,
   <img
     key={15}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_014.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_014.png"
   />,
   <img
     key={16}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_015.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_015.png"
   />,
   <img
     key={17}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_016.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_016.png"
   />,
   <img
     key={18}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_017.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_017.png"
   />,
   <img
     key={19}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_018.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_018.png"
   />,
   <img
     key={20}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_019.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_019.png"
   />,
   <img
     key={21}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_020.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_020.png"
   />,
   <img
     key={22}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_021.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_021.png"
   />,
   <img
     key={23}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_022.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_022.png"
   />,
   <img
     key={24}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_023.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_023.png"
   />,
   <img
     key={25}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_024.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_024.png"
   />,
   <img
     key={26}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_025.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_025.png"
   />,
   <img
     key={27}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_026.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_026.png"
   />,
   <img
     key={28}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_027.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_027.png"
   />,
   <img
     key={29}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_028.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_028.png"
   />,
   <img
     key={30}
     alt="HeroWarrior"
-    src="/heroWarrior/images/Died/0_Warrior_Died_029.png"
+    src="/heroWarrior/images/Died/0_Warrior_LOGOUT_029.png"
   />,
 ];
 
@@ -362,9 +362,9 @@ class HeroWarrior extends React.Component {
                 />
               </div>
             ),
-            heroDied: (
+            heroLogOut: (
               <SequenceAnimator
-                children={heroDied}
+                children={heroLogOut}
                 duration={5000}
                 autoplay={true}
               />
@@ -377,7 +377,7 @@ class HeroWarrior extends React.Component {
 
         <div className="hidden">
           {heroIdleBlinking}
-          {heroDied}
+          {heroLogOut}
         </div>
       </div>
     );

@@ -1,38 +1,33 @@
 import React from "react";
 import { Container } from "reactstrap";
-import QuestM from "./QuestM";
+import { updateUsersQuestsAndQuestsList } from "../../services/firebase";
+import QuestMG from "./QuestMG";
 
 class MissionsGlossary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      questList: [
-        {
-          current: true,
-          duration: 1,
-          expReward: 200,
-          id: 0,
-          itemRewardId: 1,
-          questDescription:
-            "Smoking cigarettes had bad influence on your health and frame of mind. By stop smoking you can decrease the risk of cancer disease to minimum. Give it a try!",
-          questName: "Stop smoke!",
-          questShortDescription:
-            "It`s time! You have to stop smoke cigarettes.",
-        },
-        {
-          current: true,
-          duration: 1,
-          expReward: 300,
-          id: 8,
-          itemRewardId: 2,
-          questDescription:
-            "Although this has not been proven - it is the best and fastest way to learn a foreign language. At least the creator of this task thinks so.",
-          questName: "Native language is lava!",
-          questShortDescription:
-            "Speak with your flatmates only in foreign language.",
-        },
-      ],
-    };
+  componentDidMount() {
+    let userQuestsTmp = JSON.parse(JSON.stringify(this.props.userQuests));
+    let questListTmp = JSON.parse(JSON.stringify(this.props.questList));
+    let currentQuestList = questListTmp.filter((x) => x.current === true);
+
+    currentQuestList.forEach(async (element) => {
+      let filteredUserQuestsByQuestId = userQuestsTmp.filter((item) => {
+        return item.questId === element.id;
+      });
+      let lastElementInUserQuests =
+        filteredUserQuestsByQuestId[filteredUserQuestsByQuestId.length - 1];
+      if (lastElementInUserQuests.questStatus === "Failed") {
+        questListTmp[element.id - 1].current = false;
+
+        this.props.updateQuestList(questListTmp);
+        try {
+          await updateUsersQuestsAndQuestsList(
+            this.props.characterDocId,
+            questListTmp,
+            userQuestsTmp
+          );
+        } catch (error) {}
+      }
+    });
   }
 
   render() {
@@ -44,8 +39,8 @@ class MissionsGlossary extends React.Component {
           </h3>
         </div>
         <div className="row height-LL overflow-auto">
-          {this.state.questList.map((item) => (
-            <QuestM
+          {this.props.questList.map((item) => (
+            <QuestMG
               key={item.id}
               questId={item.id}
               duration={item.duration}
@@ -53,6 +48,7 @@ class MissionsGlossary extends React.Component {
               questDescription={item.questDescription}
               questShortDescription={item.questShortDescription}
               current={item.current}
+              handleAddQuest={this.props.handleAddQuest}
             />
           ))}
         </div>

@@ -15,11 +15,6 @@ class ClassChoice extends React.Component {
     };
   }
 
-  getcharacterClass = () => {
-    const temp = this.state.characterClass;
-    return temp;
-  };
-
   handleChange = (e, classChosen) => {
     e.preventDefault();
     this.setState((prevState) => {

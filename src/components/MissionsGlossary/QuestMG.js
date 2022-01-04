@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import Calendar from "react-calendar";
 
-class QuestM extends React.Component {
+class QuestMG extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,10 +54,10 @@ class QuestM extends React.Component {
       questDescription: this.props.questDescription,
       questShortDescription: this.props.questShortDescription,
       duration: this.props.duration,
-      dateAdded: new Date().toISOString(),
+      dateAdded: new Date(new Date().setDate(date.getDate())).toISOString(),
       questDone: false,
     };
-    console.log(quest);
+    this.props.handleAddQuest(quest);
     this.setState({ pickModal: false });
   };
 
@@ -133,4 +133,4 @@ class QuestM extends React.Component {
   }
 }
 
-export default QuestM;
+export default QuestMG;

@@ -85,3 +85,121 @@ export async function getAllMissions() {
 
   return missions;
 }
+
+export async function getUserCharacter(email) {
+  const user = await getUserByEmail(email);
+  const output = await firebase
+    .firestore()
+    .collection("characters")
+    .where("userId", "==", user[0].userId)
+    .get();
+
+  const currentDate = new Date();
+  const outputData = output.docs[0].data();
+  const userQuestsComputed = outputData.userQuests.map((quest) => {
+    const questDate = new Date(quest.questDate);
+    if (quest.questDone === true) {
+      quest.questStatus = "Finished";
+      return quest;
+    }
+    if (questDate.toDateString() === currentDate.toDateString()) {
+      quest.questStatus = "Waiting";
+      return quest;
+    } else if (questDate.getTime() < currentDate.getTime()) {
+      quest.questStatus = "Failed";
+      return quest;
+    } else if (questDate.getTime() > currentDate.getTime()) {
+      quest.questStatus = "Future";
+      return quest;
+    }
+    return quest;
+  });
+
+  return {
+    ...output.docs[0].data(),
+    userQuests: userQuestsComputed,
+    characterDocId: output.docs[0].id,
+    userCreated: user[0].dateCreated,
+  };
+}
+
+export async function updateCharacter(docId, stats, manaLimit) {
+  firebase.firestore().collection("characters").doc(docId).update({
+    strength: stats.strength,
+    vitality: stats.vitality,
+    charisma: stats.charisma,
+    responsibility: stats.responsibility,
+    agility: stats.agility,
+    intelligence: stats.intelligence,
+    mana: manaLimit,
+    manaLimit: manaLimit,
+  });
+}
+
+export async function updateLevelAndNextLevelExp(docId, level, nextLevelExp) {
+  firebase.firestore().collection("characters").doc(docId).update({
+    level: level,
+    nextLevelExp: nextLevelExp,
+  });
+}
+
+export async function updateUsersExpQuestsAndTrophies(
+  docId,
+  experience,
+  questList,
+  userTrophies
+) {
+  firebase.firestore().collection("characters").doc(docId).update({
+    experience: experience,
+    userQuestList: questList,
+    userTrophies: userTrophies,
+  });
+}
+
+export async function updateUsersQuestList(docId, questList) {
+  firebase.firestore().collection("characters").doc(docId).update({
+    userQuestList: questList,
+  });
+}
+
+export async function updateUsersQuests(docId, userQuests) {
+  firebase.firestore().collection("characters").doc(docId).update({
+    userQuests: userQuests,
+  });
+}
+
+export async function updateUsersQuestsAndQuestsList(
+  docId,
+  questList,
+  userQuests,
+  mana
+) {
+  if (mana != null) {
+    firebase.firestore().collection("characters").doc(docId).update({
+      userQuestList: questList,
+      userQuests: userQuests,
+      mana: mana,
+    });
+  } else {
+    firebase.firestore().collection("characters").doc(docId).update({
+      userQuestList: questList,
+      userQuests: userQuests,
+    });
+  }
+}
+
+export async function getUsersTrophies(trophies) {
+  const query = await firebase
+    .firestore()
+    .collection("trophies")
+    .orderBy("id", "asc");
+
+  const output = await query.get();
+
+  const trophiesData = trophies.map((trophy) => {
+    const docTrophy = output.docs[trophy.trophyId - 1];
+    return docTrophy.data();
+  });
+
+  return trophiesData;
+}
