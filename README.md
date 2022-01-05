@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# self-discipline-rpg-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> The goal of this project was to create a web-based application, which will help users to build their habits and productivity in look and behave like RPG style game. The application was built with React, styled with Boostrap and integrated with Firebase environment. Animation of the characters is based on react-sequence-animator library. React-calendar library is responsible for fully functional calendar component.<br/> > **Live demo here https://self-discipline-rpg-app.web.app/.<br/>
+> For presentational purposes test user account has blocked permission to update character's data in the firebase database. I decided to implement it in this way to remain the character's base state between sessions. Test user credentials:**
 
-## Available Scripts
+- login: `one@test.com`
+- password: `test1234`
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Copyright claims](#copyright-claims)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React - version 16.3.1
+- Bootstrap - version 4.4.1
+- Firebase - version 9.0.2
+- formik version 2.2.9
+- yup version 0.32.9
+- react-calendar - version 3.0.1
+- react-sequence-animator - version 1.0.0
+- reactstrap - version 8.4.1
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application allows a logged in user with created character to perform actions specified below.
 
-### `npm run build`
+List of the features:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Creation of the user's character (registration of the account), form build with the formik and yup libraries
+- Taking quests from glossary
+- Viewing character's statistics
+- Checking trophies
+- Leveling character
+- Completing missions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Main page view](./preview-images/main-page-view.png)
+![Missions glossary](./preview-images/missions-glossary.png)
+![Missions statistics](./preview-images/missions-statistics.png)
+![Character's trophies](./preview-images/characters-trophies.png)
+![Character's leveling](./preview-images/characters-leveling.png)
 
-### `npm run eject`
+## Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Requirements for development of the project:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js - version 16.13.1
+- npm - version 7.6.3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone repository from github
+2. Initialize project on the firebase platform and provide credentials to firebase application in React (link to documentation https://firebase.google.com/docs/web/setup).
+3. Install all dependencies.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  npm install
+```
 
-## Learn More
+4. Create a `.env` file and insert the following code. Replace values with credentials from firebase.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+REACT_APP_FIREBASE_API_KEY = "firebase-api-key";
+REACT_APP_FIREBASE_AUTH_DOMAIN = "firebase-auth-domain";
+REACT_APP_FIREBASE_PROJECT_ID = "firebase-project-id";
+REACT_APP_FIREBASE_STORAGE_BUCKET = "firebase-storage-bucket";
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "firebase-messaging-sender-id";
+REACT_APP_FIREBASE_APP_ID = "firebase-app-id";
+REACT_APP_FIREBASE_MEASUREMENT_ID = "firebase-measurement-id";
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Start the server and application.
 
-### Code Splitting
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Copyright claims
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Items used in this project belong to their creators/authors and are not claimed by author of this project and people that use it.
