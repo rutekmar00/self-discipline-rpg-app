@@ -1,0 +1,12 @@
+.dayCircle {
+  line-height: 20px;
+  background-color: white;
+  padding: 10px 12px;
+  border-style: solid;
+  border-color: #0066ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dayCircle:hover {
+  background-color: #80b3ff;
+}

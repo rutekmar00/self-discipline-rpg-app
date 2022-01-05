@@ -1,0 +1,84 @@
+.hero {
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero .default {
+  z-index: 1;
+}
+
+.hero div {
+  margin: auto;
+  height: 100%;
+  z-index: 2;
+}
+
+.hero .hidden {
+  overflow: hidden;
+  left: -10000px;
+  height: 0;
+}
+
+.hero-elf {
+  height: 100%;
+  width: 150%;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-elf img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  right: 50%;
+  bottom: 20%;
+}
+
+.hero-knight {
+  width: 150%;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-knight img {
+  position: relative;
+  height: 100%;
+  width: 135%;
+  right: 67%;
+  bottom: 10%;
+}
+
+.hero-warrior {
+  width: 90%;
+  align-items: center;
+  position: absolute;
+  height: 90%;
+  left: -40%;
+  top: -10%;
+  pointer-events: none;
+}
+
+.hero-warrior img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 375px) {
+  .hero-warrior {
+    width: 80%;
+    height: 80%;
+    top: -2%;
+    left: 0%;
+  }
+}
